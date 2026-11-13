@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="img/logo-colombia.png" alt="Logo del proyecto Mini Portal de Colombia" width="180">
+  <img src="img/logo-colombia.png" alt="Logo del proyecto Mini Portal de Colombia" width="600">
 </p>
 
 <h1 align="center">Mini Portal de Colombia con API</h1>
@@ -34,6 +34,7 @@ Permite consultar información de los departamentos de Colombia, mostrando:
 Permite conocer los primeros 20 atractivos turísticos de Colombia, mostrando:
 
 - Nombre del atractivo turístico.
+- Fotografia obtenida de la API.
 - Descripción.
 - Ciudad.
 

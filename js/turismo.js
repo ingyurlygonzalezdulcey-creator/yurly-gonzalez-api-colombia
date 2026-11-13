@@ -23,10 +23,15 @@ fetch(url)
             const tarjeta = document.createElement("div");
 
             tarjeta.innerHTML = `
-                <h3>${atractivo.name}</h3>
-                <p><strong>Descripción:</strong> ${atractivo.description}</p>
-                <p><strong>Ciudad:</strong> ${atractivo.city ? atractivo.city.name : "No disponible"}</p>
-            `;
+            ${atractivo.images && atractivo.images.length > 0
+                ? `<img src="${atractivo.images[0]}" alt="${atractivo.name}">`
+                : "<p>Imagen no disponible</p>"
+            }
+
+            <h3>${atractivo.name}</h3>
+            <p><strong>Descripción:</strong> ${atractivo.description}</p>
+            <p><strong>Ciudad:</strong> ${atractivo.city ? atractivo.city.name : "No disponible"}</p>
+        `;
 
             // Agregamos la tarjeta
             contenedor.appendChild(tarjeta);
