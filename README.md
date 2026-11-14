@@ -28,25 +28,27 @@ Permite consultar información de los departamentos de Colombia, mostrando:
 - Población.
 - Superficie.
 - Descripción.
+- Cantidad de departamentos por región.
 
 ### 2. Guía turística de Colombia
 
 Permite conocer los primeros 20 atractivos turísticos de Colombia, mostrando:
 
 - Nombre del atractivo turístico.
-- Fotografia obtenida de la API.
+- Fotografía obtenida de la API o una imagen alternativa de Wikipedia.
 - Descripción.
 - Ciudad.
+- Departamento.
 
 Las dos secciones están conectadas mediante un menú de navegación.
 
 ## 🛠️ Tecnologías utilizadas
 
-- HTML5: estructura de las páginas.
-- CSS3: diseño y presentación.
-- JavaScript: consulta y manejo de los datos.
-- Fetch API: consumo de servicios externos.
-- API Colombia: fuente de información.
+- **HTML5:** estructura de las páginas.
+- **CSS3:** diseño y presentación.
+- **JavaScript:** consulta y manejo de los datos.
+- **Fetch API:** consumo de servicios externos.
+- **API Colombia:** fuente de información.
 
 ## 📁 Estructura del proyecto
 
@@ -73,17 +75,17 @@ yurly-gonzalez-api-colombia/
 
 Se utiliza la API pública de Colombia:
 
-https://api-colombia.com/
+[https://api-colombia.com/](https://api-colombia.com/)
 
 Servicios consultados:
 
-- Departamentos:
+- **Departamentos:**  
   https://api-colombia.com/api/v1/Department
 
-- Regiones:
+- **Regiones:**  
   https://api-colombia.com/api/v1/Region
 
-- Atractivos turísticos:
+- **Atractivos turísticos:**  
   https://api-colombia.com/api/v1/TouristicAttraction
 
 ## ▶️ Cómo ejecutar el proyecto
@@ -110,3 +112,4 @@ Servicios consultados:
 **Yurly Gonzalez**
 
 Proyecto académico desarrollado como ejercicio práctico de consumo de API y manipulación del DOM con JavaScript.
+

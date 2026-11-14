@@ -1,5 +1,4 @@
 
-
 // Direcciones de las API
 const urlDepartamentos = "https://api-colombia.com/api/v1/Department";
 const urlRegiones = "https://api-colombia.com/api/v1/Region";
@@ -22,6 +21,31 @@ fetch(urlRegiones)
 
                 // Limpiamos el contenedor
                 contenedor.innerHTML = "";
+
+                // Creamos el resumen de departamentos por región
+                const resumen = document.createElement("div");
+
+                // Hacemos que el resumen ocupe todo el ancho
+                resumen.style.gridColumn = "1 / -1";
+
+                resumen.innerHTML = "<h3>Departamentos por región</h3>";
+
+                // Recorremos las regiones
+                regiones.forEach(region => {
+
+                    // Contamos los departamentos de cada región
+                    const cantidad = data.filter(
+                        departamento => departamento.regionId === region.id
+                    ).length;
+
+                    // Mostramos el nombre y la cantidad
+                    resumen.innerHTML += `
+                        <p><strong>${region.name}:</strong> ${cantidad} departamentos</p>
+                    `;
+                });
+
+                // Agregamos el resumen al contenedor
+                contenedor.appendChild(resumen);
 
                 // Recorremos los departamentos
                 data.forEach(departamento => {
@@ -56,4 +80,3 @@ fetch(urlRegiones)
         contenedor.innerHTML = "<p>Error al cargar la información.</p>";
         console.log("Error:", error);
     });
-

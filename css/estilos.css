@@ -1,4 +1,8 @@
 
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,93 +11,286 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f5f2;
+    background: linear-gradient(135deg, #fffaf0, #eef7ff);
     color: #333;
+    min-height: 100vh;
 }
+
+/* =========================================
+   2. BARRA SUPERIOR FIJA
+========================================= */
+
+.barra-superior {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   3. BANNER PRINCIPAL
+========================================= */
 
 header {
-    background-color: #087443;
+    background:
+        linear-gradient(
+            rgba(10, 55, 100, 0.55),
+            rgba(10, 55, 100, 0.60)
+        ),
+        url("https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?auto=format&fit=crop&w=1800&q=85");
+
+    background-color: #FCD116;
+    background-size: cover;
+    background-position: center 45%;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 45px 20px;
+    border-bottom: 7px solid #CE2029;
 }
 
+header h1 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    color: white;
+    font-size: 17px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================
+   4. MENÚ DE NAVEGACIÓN
+========================================= */
+
 nav {
-    background-color: #064d30;
+    background: linear-gradient(90deg, #0756A3, #2876C7);
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    background-color: white;
+    color: #0756A3;
     text-decoration: none;
-    margin: 15px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
+nav a:hover {
+    background-color: #CE2029;
+    color: white;
+    border-color: #CE2029;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. CONTENIDO PRINCIPAL
+========================================= */
+
 main {
-    padding: 25px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 45px 25px;
 }
 
 main h2 {
     text-align: center;
-    margin-bottom: 25px;
+    color: #0756A3;
+    font-size: 30px;
+    margin-bottom: 35px;
 }
 
-#departamentos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+main h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(90deg, #FCD116, #CE2029);
+    margin: 13px auto 0;
+    border-radius: 5px;
 }
 
-#departamentos div {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+/* =========================================
+   6. CUADRÍCULA DE TARJETAS
+========================================= */
 
-#departamentos h3 {
-    color: #087443;
-    margin-bottom: 12px;
-}
-
-#departamentos p {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-#departamentos div:hover,
-#turismo div:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-}
-
-
+#departamentos,
 #turismo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: stretch;
 }
 
-#turismo div {
+/* =========================================
+   7. CONTADOR DE DEPARTAMENTOS POR REGIÓN
+========================================= */
+
+#departamentos > div:first-child {
+    grid-column: 1 / -1;
+    background: linear-gradient(120deg, #fff1ad, #ffffff);
+    border: 2px solid #FCD116;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+}
+
+#departamentos > div:first-child h3 {
+    width: 100%;
+    color: #0756A3;
+    font-size: 23px;
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+#departamentos > div:first-child p {
     background-color: white;
-    padding: 20px;
+    border-left: 5px solid #CE2029;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 13px 18px;
+    margin: 0;
+    font-size: 14px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
 }
 
-#turismo h3 {
-    color: #087443;
-    margin-bottom: 12px;
+#departamentos > div:first-child p:hover {
+    transform: translateY(-4px);
+    border-left-color: #0756A3;
 }
 
-#turismo p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+/* =========================================
+   8. TARJETAS DE DEPARTAMENTOS Y TURISMO
+========================================= */
+
+#departamentos > div:not(:first-child),
+#turismo > div {
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 5px 18px rgba(0, 60, 120, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding-bottom: 18px;
 }
+
+#departamentos > div:not(:first-child):hover,
+#turismo > div:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 60, 120, 0.20);
+}
+
+/* =========================================
+   9. FOTOGRAFÍAS TURÍSTICAS
+========================================= */
+
 #turismo img {
     width: 100%;
-    height: 180px;
+    height: 230px;
     object-fit: cover;
-    border-radius: 8px;
+    display: block;
+    background-color: #e6f0f8;
+    transition: transform 0.4s;
+}
+
+#turismo > div:hover img {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   10. TÍTULOS DE LAS TARJETAS
+========================================= */
+
+#departamentos > div:not(:first-child) h3,
+#turismo h3 {
+    color: #0756A3;
+    font-size: 21px;
+    padding: 18px 18px 10px;
+    border-bottom: 3px solid #FCD116;
     margin-bottom: 12px;
 }
+
+/* =========================================
+   11. INFORMACIÓN DE LAS TARJETAS
+========================================= */
+
+#departamentos p,
+#turismo p {
+    padding: 5px 18px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================================
+   12. DISEÑO PARA CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 15px;
+        background-position: center;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav {
+        gap: 9px;
+        padding: 12px 8px;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    main h2 {
+        font-size: 23px;
+    }
+
+    #departamentos,
+    #turismo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #departamentos > div:first-child {
+        padding: 18px;
+    }
+
+    #departamentos > div:first-child p {
+        width: 100%;
+    }
+
+    #turismo img {
+        height: 210px;
+    }
+}
+
