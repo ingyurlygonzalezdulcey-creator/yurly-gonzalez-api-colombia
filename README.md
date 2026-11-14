@@ -99,9 +99,8 @@ Servicios consultados:
 
 **Enlace para visitar el proyecto:**
 
-[Ver Mini Portal de Colombia](PEGA_AQUI_EL_ENLACE_DE_TU_PAGINA_PUBLICADA)
+[Ver Mini Portal de Colombia] https://ingyurlygonzalezdulcey-creator.github.io/yurly-gonzalez-api-colombia/
 
-*El enlace estará disponible una vez se publique el sitio web.*
 
 ## 📦 Repositorio
 
